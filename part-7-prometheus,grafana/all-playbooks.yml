@@ -1,0 +1,3 @@
+- import_playbook: install-prometheus.yml
+- import_playbook: install-node-exporter.yml
+- import_playbook: install-grafana.yml

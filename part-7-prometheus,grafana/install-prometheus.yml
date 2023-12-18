@@ -1,0 +1,17 @@
+- name: Installing Prometheus
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: Create a volume
+    docker_volume:
+      name: prometheus_volume
+  - name: Create Prometheus container
+    docker_container:
+      name: prometheus
+      restart_policy: always
+      image: prom/prometheus
+      volumes:
+        - ./prometheus-config:/etc/prometheus
+        - prometheus_volume:/prometheus
+      ports:
+        - "9090:9090"

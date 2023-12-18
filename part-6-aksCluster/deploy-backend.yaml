@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+  namespace: finalproject
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - image: kaputinho/basic3tier-back-k8s:latest
+          name: backend
+          ports:
+            - containerPort: 80
+          env:
+            - name: DATABASE_HOST
+              value: "db-service-clusterip"  
+            - name: DATABASE_PORT
+              value: "5432"  
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "admin123"
+            - name: POSTGRES_DB
+              value: "basic3tier"

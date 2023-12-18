@@ -1,0 +1,16 @@
+- name: Create NodeExporter
+  hosts: webserver
+  become: yes
+  tasks:
+  - name: NodeExporter container
+    docker_container:
+      name: node-exporter
+      restart_policy: always
+      image: quay.io/prometheus/node-exporter
+      volumes:
+        - /:/host:ro,rslave
+      command: >
+        --path.procfs=/host/proc
+        --path.rootfs=/host
+      ports:
+        - "9100:9100"

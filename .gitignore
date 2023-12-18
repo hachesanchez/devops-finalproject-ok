@@ -1,0 +1,87 @@
+# .gitignore
+
+# macOS system files
+.DS_Store
+
+# Visual Studio Code settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
+
+# Node.js dependencies
+node_modules/
+
+# Compiled binaries or libraries
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+
+# macOS folder config file
+.AppleDouble/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Compiled Java classes
+*.class
+
+# Compiled C++ files
+*.out
+*.exe
+*.dll
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+
+# Environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# macOS, Linux, and Windows file system files
+.DS_Store?
+Desktop.ini
+Thumbs.db
+
+# Editor-specific files
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.sln.docstates
+
+# Android Studio
+*.iml
+.gradle/
+/.idea/
+
+# Build files
+build/
+dist/
+
+# Database files
+*.sqlite
+*.sqlite3
+
+# Log files
+*.log
+
+#terraform
+.terraform
